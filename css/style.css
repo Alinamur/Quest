@@ -17,6 +17,8 @@
 div[class*="column"] {  
     float: left; 
     padding: 0 15px; 
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
 .row { 

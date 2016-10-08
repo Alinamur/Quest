@@ -3,19 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Квест</title>
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/normalize.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<header>
 		<div class="container">
 			<div class="row">
-					<div class="logo column2 pull-left">
+					<div class="logo column2">
 						<img src="http://placehold.it/200x50" alt="">
 					</div>
-					<div class="main-nav column10 pull-right">
-						<ul class="main-nav_list list-inline ">
+					<div class="main-nav column10">
+						<ul class="main-nav__list list-inline ">
 							<li class="main-nav__item"><a href="#" class="main-nav__link">Lorem</a></li>
 							<li class="main-nav__item"><a href="#" class="main-nav__link">Lorem</a></li>
 							<li class="main-nav__item"><a href="#" class="main-nav__link">Lorem</a></li>
@@ -34,11 +34,11 @@
 					<h1 class="promo-title">Квесты в Санкт-Петербурге с использованием необычных механизмов</h1>
 				</div>
 		</div>
-		<div class="quest_cart">
+		<div class="quests__list">
 			<div class="container">
 				<div class="row">
 						<div class="quest-cart__big quest-cart__big--experiment column12">
-							<p class="quest-cart__big-title">
+							<p class="quest-cart-title quest-cart-title--experiment">
 							Эксперимент генной инженерии	
 							</p>
 							<p class="quest-cart__big-text">
@@ -57,7 +57,7 @@
 				</div>
 				<div class="row">
 						<div class="quest-cart__small column6 quest-cart__small--postapocalypse">
-							<p class="quest-cart__small-title">
+							<p class="quest-cart-title quest-cart-title--postapocalypse">
 							Постапокалипсис	
 							</p>
 							<p class="quest-cart__small-text">
@@ -65,7 +65,7 @@
 							</p>
 						</div>
 						<div class="quest-cart__small column6 quest-cart__small--cosmo">
-							<p class="quest-cart__small-title">
+							<p class="quest-cart-title quest-cart-title--cosmo">
 							Космическая станция	
 							</p>
 							<p class="quest-cart__small-text">
@@ -82,26 +82,38 @@
 				<p class="about__title">О нас</p>
 				<div class="row">
 					<p class="about-item column3">
+						<div class="about-item__img">
+							<img src="" alt="">
+						</div>
 						Необычные механизмы
 					</p>
 					<p class="about-item column3">
+						<div class="about-item__img">
+							<img src="" alt="">
+						</div>
 						Эксклюзивные сценарии
 					</p>
-					<p class="about-item column3">		
+					<p class="about-item column3">
+						<div class="about-item__img">
+							<img src="" alt="">
+						</div>
 						Скидки студентам
 					</p>
 					<p class="about-item column3">
+						<div class="about-item__img">
+							<img src="" alt="">
+						</div>
 						Транспортная доступность
 					</p>
 				</div>
-				<p class="about__text">
+				<p class="about-text">
 					Quest spot это квест в реальности нового формата. С эксклюзивной росписью стен в стилистическом содержании. С привлечением креативных художников и собственной декорации 
 				</p>
 			</div>
 		</div>
 		<div class="reviews">
 			<div class="container">
-				<p class="reviews__title">
+				<p class="reviews-title">
 					Что о нас говорят
 				</p>
 				<div class="row">
@@ -116,39 +128,42 @@
 						<p class="reviews-item__text">Стильный, атмосферный, непростой и захватывающий квест, который "вырывает" тебя из реального мира. На час мы выпали из повседневности! Спасибо за теплый прием, дружескую атмосферу, адекватного администратора и, разумеется, позитивные эмоции!</p>
 					</div>
 				</div>
-				<div class="reviews__form">
-					<form action="">
+				<div class="reviews-form">
 					<div class="row">
-							<input type="text" class="column8">
-							<input type="text" class="column3 block">
-							<input type="text" class="column3 block">
-							<button>Записаться</button>
+						<form action="">
+							<input type="text" class="reviews-form__text column8">
+							<input type="text" class="reviews-form__name column3 block">
+							<input type="text" class="reviews-form__mail column3 block">
+							<input type="button" value="Записаться" class="reviews-form__send">
+						</form>
 					</div>
-					</form>
 				</div>
 			</div>
 		</div>
-		<div class="container">
-			<div class="row">
-				<div class="contacts column6">
-						<p class="contacts__title">Контакты</p>
-						<p class="contacts__city">Санкт-Петербург</p>
-						<p class="contacts__metro">от метро 8 минут</p>
-						<p class="contacts__time">с 10.00 до 22.00</p>
-						<p class="contacts__phone">+7 999 888 99 88</p>
-						<p class="contacts__mail"></p>
+		<div class="contacts">
+			<div class="container">
+				<div class="row">
+				<div class="contacts-details column6"></div>
+						<p class="contacts-item contacts-item--title">Контакты</p>
+						<p class="contacts-item contacts-item--city">Санкт-Петербург</p>
+						<p class="contacts-item contacts-item--metro">от метро 8 минут</p>
+						<p class="contacts-item contacts-item--time">с 10.00 до 22.00</p>
+						<p class="contacts-item contacts-item--phone">+7 999 888 99 88</p>
+						<p class="contacts-item contacts-item--mail"></p>
 						<div class="socio">
 						</div>
-						<button>Записаться</button>
+						<input type="button" value="Записаться">
 				</div>
-				<div class="map column6">
-					
+				</div>
+				<div class="map column6">	
 				</div>
 			</div>
 		</div>
 	</main>
 	<footer>
-		<p class="footer-text">2015 Quest</p>
+		<div class="container">
+			<p class="footer-text">2015 Quest</p>
+		</div>
 	</footer>
 </body>
 </html>
