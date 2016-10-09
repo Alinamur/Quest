@@ -50,6 +50,7 @@ body{
 	min-width: 1200px;
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-weight: 300;
+    color: #7ec9c3;
 }
 a {
     text-decoration: none;
@@ -69,7 +70,6 @@ a {
     margin-right: 30px;
 }
 .main-nav__link{
-    color: #7ec9c3;
     font-size: 18px;
     line-height: 60px;
    text-transform: uppercase;
@@ -86,7 +86,6 @@ a {
     padding: 440px 0 80px 0px;
     text-align: center;
     margin: 0 15.5%;
-    color: #7ec9c3;
     font-size: 40px;
     line-height: 48px;
 }
@@ -100,7 +99,57 @@ a {
     text-transform: uppercase;
     font-size: 36px;
     line-height: 60px;
-    color: #7ec9c3;
     text-align: center;
     padding-top: 70px;
+    margin-bottom: 0;
+}
+
+
+
+.quest-cart__big{
+    margin-bottom: 10px;
+}
+.quest-cart-title{
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 24px;
+    text-transform: uppercase;
+    width: 25%;
+    padding: 20px 0 0 85px;
+}
+.quest-cart__big-text{
+    width: 45%;
+    padding-left: 40px;
+}
+.quest-cart__big-setting{
+    display: inline-block;
+    padding-left: 60px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+}
+.quest-cart__small-text{
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 24px;
+    width: 130px;
+}
+.quest-cart__small--open{
+    color: #fdf;
+}
+.quest-cart__small{
+    margin-bottom: 70px;
+}
+
+
+.about__title{
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 60px;
+    text-transform: uppercase;
+    text-align: center;
+}
+.about-item{
+
 }
