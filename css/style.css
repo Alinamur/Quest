@@ -55,7 +55,9 @@ a {
     text-decoration: none;
 }
 
-
+.logo img{
+    max-width: 100%;
+}
 .navigation-row {
     background-color: #000;
 }
@@ -78,7 +80,10 @@ a {
 
 
 .promo{
-
+    background-image: url(../img/sprite/bg_promo.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
 }
 .promo-title{
     padding: 440px 0 80px 0px;
@@ -91,7 +96,9 @@ a {
 
 
 .quests__list{
-
+    background-image: url(../img/sprite/bg_reviews_top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 .quests-title{
     text-transform: uppercase;
@@ -177,7 +184,9 @@ a {
 
 
 .reviews{
-
+    background-image: url(../img/sprite/bg_reviews_top.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .reviews-title{
     font-size: 36px;
@@ -211,4 +220,21 @@ a {
     display: block;
     padding-left: 30px;
     width: 85%;
+}
+
+
+.contacts{
+    background-color: #000;
+}
+.contacts-details{
+
+}
+.contacts-item{
+
+}
+
+footer{
+    background-image: url(../img/sprite/bg_reviews_top.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
