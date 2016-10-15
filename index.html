@@ -6,13 +6,14 @@
 	<link rel="stylesheet" href="css/normalize.css">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 </head>
 <body>
 	<header class="navigation-row">
 		<div class="container">
 			<div class="row">
 					<div class="logo column2">
-						<img src="img/logo.svg" alt="">
+						<img src="img/sprite/main_logo.png" alt="">
 					</div>
 					<div class="main-nav column10">
 						<ul class="main-nav__list list-inline ">
@@ -20,9 +21,9 @@
 							<li class="main-nav__item"><a href="#" class="main-nav__link">О нас</a></li>
 							<li class="main-nav__item"><a href="#" class="main-nav__link">Отзывы</a></li>
 							<li class="main-nav__item"><a href="#" class="main-nav__link">Контакты</a></li>
-							<li class="main-nav__item"><a href="http://vk.com" class="main-nav__link main-nav__link--socio"><img src="img/sprite/vk.svg" alt=""></a></li>
-							<li class="main-nav__item"><a href="http://fb.com" class="main-nav__link main-nav__link--socio"><img src="img/sprite/facebook.svg" alt=""></a></li>
-							<li class="main-nav__item"><a href="http://instagram.com" class="main-nav__link main-nav__link--socio"><img src="img/sprite/insta.svg" alt=""></a></li>
+							<li class="main-nav__item"><a href="http://vk.com" class="main-nav__link main-nav__link--socio"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzQzNkVBQjsiIGQ9Ik00NDAuNjQ5LDI5NS4zNjFjMTYuOTg0LDE2LjU4MiwzNC45MDksMzIuMTgyLDUwLjE0Miw1MC40MzYgIGM2LjcyOSw4LjExMiwxMy4wOTksMTYuNDgyLDE3Ljk3MywyNS44OTZjNi45MDYsMTMuMzgyLDAuNjUxLDI4LjEwOC0xMS4zNDgsMjguOTA3bC03NC41OS0wLjAzNCAgYy0xOS4yMzgsMS41OTYtMzQuNTg1LTYuMTQ4LTQ3LjQ4OS0xOS4zMDJjLTEwLjMyNy0xMC41MTktMTkuODkxLTIxLjcxNC0yOS44MjEtMzIuNTg4Yy00LjA3MS00LjQ0NC04LjMzMi04LjYyNi0xMy40MjItMTEuOTMyICBjLTEwLjE4Mi02LjYwOS0xOS4wMjEtNC41ODYtMjQuODQsNi4wMzRjLTUuOTI2LDEwLjgwMi03LjI3MSwyMi43NjItNy44NTMsMzQuOGMtMC43OTksMTcuNTY0LTYuMTA4LDIyLjE4Mi0yMy43NTEsMjIuOTg2ICBjLTM3LjcwNSwxLjc3OC03My40ODktMy45MjYtMTA2LjczMi0yMi45NDdjLTI5LjMwOC0xNi43NjgtNTIuMDM0LTQwLjQ0MS03MS44MTYtNjcuMjQgIEM1OC41ODksMjU4LjE5NCwyOS4wOTQsMjAwLjg1MiwyLjU4NiwxNDEuOTA0Yy01Ljk2Ny0xMy4yODEtMS42MDMtMjAuNDEsMTMuMDUxLTIwLjY2M2MyNC4zMzMtMC40NzMsNDguNjYzLTAuNDM5LDczLjAyNS0wLjAzNCAgYzkuODksMC4xNDUsMTYuNDM3LDUuODE3LDIwLjI1NiwxNS4xNmMxMy4xNjUsMzIuMzcxLDI5LjI3NCw2My4xNjksNDkuNDk0LDkxLjcxNmM1LjM4NSw3LjYsMTAuODc2LDE1LjIwMSwxOC42OTQsMjAuNTUgIGM4LjY1LDUuOTIzLDE1LjIzNiwzLjk2LDE5LjMwNS01LjY3NmMyLjU4Mi02LjExLDMuNzEzLTEyLjY5MSw0LjI5NS0xOS4yMzRjMS45MjgtMjIuNTEzLDIuMTgyLTQ0Ljk4OC0xLjE5OS02Ny40MjIgIGMtMi4wNzYtMTQuMDAxLTkuOTYyLTIzLjA2NS0yMy45MzMtMjUuNzE0Yy03LjEyOS0xLjM1MS02LjA2OC00LjAwNC0yLjYxNi04LjA3M2M1Ljk5NS03LjAxOCwxMS42MzQtMTEuMzg3LDIyLjg3NS0xMS4zODdoODQuMjk4ICBjMTMuMjcxLDIuNjE5LDE2LjIxOCw4LjU4MSwxOC4wMzUsMjEuOTM0bDAuMDcyLDkzLjYzN2MtMC4xNDUsNS4xNjksMi41ODIsMjAuNTEsMTEuODkzLDIzLjkzMSAgYzcuNDUyLDIuNDM2LDEyLjM2NC0zLjUyNiwxNi44MzYtOC4yNTFjMjAuMTgzLTIxLjQyMSwzNC41ODgtNDYuNzM3LDQ3LjQ1Ny03Mi45NTFjNS43MTEtMTEuNTI3LDEwLjYyMi0yMy40OTcsMTUuMzgxLTM1LjQ1OCAgYzMuNTI2LTguODc1LDkuMDU5LTEzLjI0MiwxOS4wNTYtMTMuMDQ5bDgxLjEzMiwwLjA3MmMyLjQwNiwwLDQuODQsMC4wMzUsNy4xNywwLjQzNGMxMy42NzEsMi4zMywxNy40MTgsOC4yMTEsMTMuMTk1LDIxLjU2MSAgYy02LjY1MywyMC45NDUtMTkuNTk4LDM4LjQtMzIuMjU1LDU1LjkzNWMtMTMuNTMsMTguNzIxLTI4LjAwMSwzNi44MDItNDEuNDE4LDU1LjYzNCAgQzQyNC4zNTcsMjcxLjc1Niw0MjUuMzM2LDI4MC40MjQsNDQwLjY0OSwyOTUuMzYxTDQ0MC42NDksMjk1LjM2MXoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /></a></li>
+							<li class="main-nav__item"><a href="http://fb.com" class="main-nav__link main-nav__link--socio"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzM4NUM4RTsiIGQ9Ik0xMzQuOTQxLDI3Mi42OTFoNTYuMTIzdjIzMS4wNTFjMCw0LjU2MiwzLjY5Niw4LjI1OCw4LjI1OCw4LjI1OGg5NS4xNTkgIGM0LjU2MiwwLDguMjU4LTMuNjk2LDguMjU4LTguMjU4VjI3My43OGg2NC41MTljNC4xOTUsMCw3LjcyNS0zLjE0OCw4LjIwNC03LjMxNWw5Ljc5OS04NS4wNjFjMC4yNjktMi4zNC0wLjQ3Mi00LjY4NC0yLjAzOC02LjQ0ICBjLTEuNTY3LTEuNzU3LTMuODEtMi43NjMtNi4xNjQtMi43NjNoLTc0LjMxNlYxMTguODhjMC0xNi4wNzMsOC42NTQtMjQuMjI0LDI1LjcyNi0yNC4yMjRjMi40MzMsMCw0OC41OSwwLDQ4LjU5LDAgIGM0LjU2MiwwLDguMjU4LTMuNjk4LDguMjU4LTguMjU4VjguMzE5YzAtNC41NjItMy42OTYtOC4yNTgtOC4yNTgtOC4yNThoLTY2Ljk2NUMzMDkuNjIyLDAuMDM4LDMwOC41NzMsMCwzMDcuMDI3LDAgIGMtMTEuNjE5LDAtNTIuMDA2LDIuMjgxLTgzLjkwOSwzMS42M2MtMzUuMzQ4LDMyLjUyNC0zMC40MzQsNzEuNDY1LTI5LjI2LDc4LjIxN3Y2Mi4zNTJoLTU4LjkxOGMtNC41NjIsMC04LjI1OCwzLjY5Ni04LjI1OCw4LjI1OCAgdjgzLjk3NUMxMjYuNjgzLDI2OC45OTMsMTMwLjM3OSwyNzIuNjkxLDEzNC45NDEsMjcyLjY5MXoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /></a></li>
+							<li class="main-nav__item"><a href="http://instagram.com" class="main-nav__link main-nav__link--socio"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzFEMzM2NjsiIGQ9Ik02NS43NDEsMC4wMjFINDQ2LjI5YzM2LjE1NCwwLDY1LjcxLDI5LjU2Niw2NS43MSw2NS43MlY0NDYuMjljMCwzNi4xNDQtMjkuNTU2LDY1LjY5LTY1LjcxLDY1LjY5ICBINjUuNzQxQzI5LjU4Nyw1MTEuOTgsMCw0ODIuNDMyLDAsNDQ2LjI5VjY1Ljc0MUMwLDI5LjU4NywyOS41ODcsMC4wMjEsNjUuNzQxLDAuMDIxeiBNMzcyLjk4NSw1Ni44ODIgIGMtMTIuNjk0LDAtMjMuMDQ5LDEwLjM5NS0yMy4wNDksMjMuMDgzdjU1LjE0OWMwLDEyLjY5MiwxMC4zNTQsMjMuMDY0LDIzLjA0OSwyMy4wNjRoNTcuODYxYzEyLjY3NCwwLDIzLjA1LTEwLjM3MSwyMy4wNS0yMy4wNjQgIFY3OS45NjRjMC0xMi42ODctMTAuMzc3LTIzLjA4My0yMy4wNS0yMy4wODNDNDMwLjg0Niw1Ni44ODIsMzcyLjk4NSw1Ni44ODIsMzcyLjk4NSw1Ni44ODJ6IE00NTQuMTE3LDIxNi41MjFoLTQ1LjA0OSAgYzQuMjcyLDEzLjk1Miw2LjU4OCwyOC42NjUsNi41ODgsNDMuOTYyYzAsODUuMTMyLTcxLjI4MSwxNTQuMTgtMTU5LjE3NCwxNTQuMThjLTg3Ljg3MSwwLTE1OS4xNTQtNjkuMDQ4LTE1OS4xNTQtMTU0LjE4ICBjMC0xNS4yOTcsMi4zMzgtMzAuMDEsNi41ODktNDMuOTYyaC00N3YyMTYuMjg5YzAsMTEuMjAxLDkuMTQ2LDIwLjMxMywyMC4zMzcsMjAuMzEzaDM1Ni41MzVjMTEuMjAxLDAsMjAuMzI4LTkuMTEyLDIwLjMyOC0yMC4zMTMgIFYyMTYuNTIxeiBNMjU2LjQ4MywxNTUuMjY5Yy01Ni43NjQsMC0xMDIuODEsNDQuNTkyLTEwMi44MSw5OS42NDljMCw1NS4wMDEsNDYuMDQ2LDk5LjYyNywxMDIuODEsOTkuNjI3ICBjNTYuNzk0LDAsMTAyLjg0Mi00NC42MjYsMTAyLjg0Mi05OS42MjdDMzU5LjMyNSwxOTkuODU5LDMxMy4yNzcsMTU1LjI2OSwyNTYuNDgzLDE1NS4yNjl6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" /></a></li>
 						</ul>
 					</div>
 			</div>
@@ -38,8 +39,6 @@
 			<div class="container">
 			<div class="row">
 				<p class="quests-title">Квесты</p>
-			</div>
-				<div class="row">
 						<div class="quest-cart__big quest-cart__big--experiment column12">
 							<p class="quest-cart-title quest-cart-title--experiment">
 							Эксперимент генной инженерии	
@@ -57,9 +56,11 @@
 								: 60 минут
 							</p>
 						</div>	
-				</div>
-				<div class="row">
-						<div class="quest-cart__small column6 quest-cart__small--postapocalypse">
+			
+				<!-- <div class="row"> -->
+					<div class="row">
+					<div class="column6">
+						<div class="quest-cart__small quest-cart__small--postapocalypse">
 							<p class="quest-cart-title quest-cart-title--postapocalypse">
 							Постапокалипсис	
 							</p>
@@ -67,15 +68,19 @@
 							<span class="quest-cart__small--open">Открытие:</span> Осень 2015
 							</p>
 						</div>
-						<div class="quest-cart__small column6 quest-cart__small--cosmo">
+					</div>
+					<div class="column6">
+						<div class="quest-cart__small quest-cart__small--cosmo">
 							<p class="quest-cart-title quest-cart-title--cosmo">
 							Космическая станция	
 							</p>
 							<p class="quest-cart__small-text">
 							<span class="quest-cart__small--open">Открытие:</span> Зима 2015
 							</p>
-						</div>	
-				</div>
+						</div>
+					</div>
+					</div>	
+			</div>
 			</div>
 		</div>
 		<div class="about">
@@ -86,26 +91,26 @@
 				<div class="row">
 					<div class="about-item column3">
 						<div class="about-item__img">
-							<img src="img/sprite/about_mechanic.svg" alt="">
+							<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDQ4NS4yMTMgNDg1LjIxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDg1LjIxMyA0ODUuMjEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPHBhdGggZD0iTTQ4NS4yMTIsMjcyLjkzdi02MC42NDhsLTY1LjUzNS0xMC45M2MtNC41NjQtMTkuNjktMTIuMzIxLTM4LjA4My0yMi43Mi01NC43NTZsMzguNjQ3LTU0LjA3OGwtNDIuODc2LTQyLjg4MyAgIGwtNTQuMTEsMzguNjJjLTE2LjY3NS0xMC4zNjYtMzUuMDYzLTE4LjE1NS01NC43NTktMjIuNzQ1TDI3Mi45MzQsMGgtNjAuNjVsLTEwLjkzMSw2NS41MDkgICBjLTE5LjY2Miw0LjU5LTM4LjA4MywxMi4zNzktNTQuNzU2LDIyLjc0NWwtNTQuMTA4LTM4LjYyTDQ5LjYwNyw5Mi41MThsMzguNjQ4LDU0LjA3OGMtMTAuMzk2LDE2LjY0NS0xOC4xNTUsMzUuMDY2LTIyLjcxNyw1NC43NTYgICBsLTY1LjUzNywxMC45M3Y2MC42NDhsNjUuNTM3LDEwLjkzMWM0LjU2MiwxOS42OTUsMTIuMzIxLDM4LjA4OCwyMi43MTcsNTQuNzU5bC0zOC42NDgsNTQuMTA1bDQyLjg4MSw0Mi44ODFsNTQuMTM2LTM4LjY0MyAgIGMxNi42NDYsMTAuMzkzLDM1LjA2NiwxOC4xNTQsNTQuNzI5LDIyLjcxNGwxMC45MzEsNjUuNTM1aDYwLjY1bDEwLjkyNi02NS41MzVjMTkuNjYzLTQuNTYsMzguMDg0LTEyLjMyMSw1NC43NTktMjIuNzE0ICAgbDU0LjExLDM4LjY0M2w0Mi44NzYtNDIuODgxbC0zOC42NDctNTQuMTA1YzEwLjM5OC0xNi42NzEsMTguMTU1LTM1LjA5MiwyMi43Mi01NC43NTlMNDg1LjIxMiwyNzIuOTN6IE0yNDIuNjA3LDM2My45MDYgICBjLTY2Ljk4OSwwLTEyMS4zMDItNTQuMzExLTEyMS4zMDItMTIxLjNjMC02Ni45ODksNTQuMzEzLTEyMS4zMDIsMTIxLjMwMi0xMjEuMzAyYzY2Ljk5MSwwLDEyMS4zMDIsNTQuMzEzLDEyMS4zMDIsMTIxLjMwMiAgIEMzNjMuOTA5LDMwOS41OTUsMzA5LjU5OSwzNjMuOTA2LDI0Mi42MDcsMzYzLjkwNnoiIGZpbGw9IiM3ZWM5YzMiLz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
 						</div>
 						<p class="about-item__text">Необычные механизмы</p> 
 					
 					</div>
 					<div class="about-item column3">
 						<div class="about-item__img">
-							<img src="img/sprite/about_book.svg" alt="">
+							<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ4Mi4yMDQgNDgyLjIwNCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDgyLjIwNCA0ODIuMjA0OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCI+CjxnPgoJPGc+CgkJPHBhdGggZD0iTTgzLjEyNywzNDQuNDc3YzU0LjYwMiwxLjA2MywxMDEuOTE5LDkuMjI4LDEzNi44MzcsMjMuNjEzYzAuNTk2LDAuMjQ0LDEuMjI3LDAuMzY2LDEuODUyLDAuMzY2ICAgIGMwLjk1LDAsMS44OTUtMC4yNzksMi43MDYtMC44MjJjMS4zNDktMC45MDIsMi4xNTgtMi40MTgsMi4xNTgtNC4wNDFsMC4wMTktMjYxLjAxN2MwLTEuOTkyLTEuMjE1LTMuNzgzLTMuMDY2LTQuNTE5ICAgIEw4NS4wMTksNDIuODk5Yy0xLjQ5Ni0wLjU5Ni0zLjE5My0wLjQxMS00LjUyNywwLjQ5NGMtMS4zMzQsMC45MDYtMi4xMzMsMi40MTMtMi4xMzMsNC4wMjV2MjkyLjE5NyAgICBDNzguMzU5LDM0Mi4yNjQsODAuNDc5LDM0NC40MjUsODMuMTI3LDM0NC40Nzd6IiBmaWxsPSIjN2VjOWMzIi8+CgkJPHBhdGggZD0iTTQ4MC4yNDQsODkuMjU2Yy0xLjIzMS0wLjkxNy0yLjgyNC0xLjE5OC00LjI5Ny0wLjc1OWwtNDkuMDI1LDE0LjY1NyAgICBjLTIuMDYsMC42MTYtMy40NzEsMi41MS0zLjQ3MSw0LjY1OXYyNTIuMTUxYzAsMCwwLjIxOCwzLjk3OC0zLjk3LDMuOTc4Yy00Ljc5NiwwLTcuOTQ2LDAtNy45NDYsMCAgICBjLTM5LjU0OSwwLTExMy4wNDUsNC4xMDUtMTYwLjkzLDMxLjZsLTkuNTA0LDUuNDQybC05LjUwMy01LjQ0MmMtNDcuODg2LTI3LjQ5NC0xMjEuMzgxLTMxLjYtMTYwLjkzLTMxLjZjMCwwLTguMDk5LDAtMTAuMTQyLDAgICAgYy0xLjg5MSwwLTEuNzc1LTIuMjcyLTEuNzc1LTIuMjcxVjEwNy44MTNjMC0yLjE0OS0xLjQxMS00LjA0My0zLjQ3LTQuNjU5TDYuMjU2LDg4LjQ5N2MtMS40NzMtMC40MzktMy4wNjYtMC4xNTgtNC4yOTgsMC43NTkgICAgUzAsOTEuNjE5LDAsOTMuMTU1djMwNS4wNjljMCwxLjM3MiwwLjU4MSwyLjY4MSwxLjU5NywzLjYwNGMxLjAxNywwLjkyMSwyLjM3NSwxLjM3MiwzLjc0MSwxLjIzNiAgICBjMTQuNTcxLTEuNDI5LDM3LjM1MS0zLjEzMSw2My4xMjQtMy4xMzFjNTYuNjA2LDAsMTAyLjA5Nyw4LjI2NiwxMzEuNTc2LDIzLjkxM2M0LjMzMSwyLjI3MiwyOS40NDEsMTUuODAzLDQxLjA2NSwxNS44MDMgICAgYzExLjYyNCwwLDM2LjczMy0xMy41Myw0MS4wNjMtMTUuODAzYzI5LjQ4LTE1LjY0Nyw3NC45NzEtMjMuOTEzLDEzMS41NzctMjMuOTEzYzI1Ljc3MSwwLDQ4LjU1MywxLjcwMiw2My4xMjMsMy4xMzEgICAgYzEuMzY3LDAuMTM2LDIuNzI1LTAuMzE1LDMuNzQyLTEuMjM2YzEuMDE2LTAuOTIzLDEuNTk2LTIuMjMxLDEuNTk2LTMuNjA0VjkzLjE1NUM0ODIuMjAzLDkxLjYxOSw0ODEuNDc2LDkwLjE3Myw0ODAuMjQ0LDg5LjI1NnogICAgIiBmaWxsPSIjN2VjOWMzIi8+CgkJPHBhdGggZD0iTTI1Ny42NzksMzY3LjYzNGMwLjgxMiwwLjU0MywxLjc1NywwLjgyMiwyLjcwNiwwLjgyMmMwLjYyNiwwLDEuMjU2LTAuMTIyLDEuODUzLTAuMzY2ICAgIGMzNC45MTctMTQuMzg2LDgyLjIzNS0yMi41NTEsMTM2LjgzNy0yMy42MTNjMi42NDgtMC4wNTIsNC43NjktMi4yMTMsNC43NjktNC44NjFWNDcuNDE4YzAtMS42MTMtMC43OTktMy4xMi0yLjEzMy00LjAyNSAgICBjLTEuMzM0LTAuOTA0LTMuMDMxLTEuMDktNC41MjgtMC40OTRMMjU4LjU2OSw5OC4wNTdjLTEuODUxLDAuNzM2LTMuMDY1LDIuNTI3LTMuMDY1LDQuNTE5bDAuMDE5LDI2MS4wMTcgICAgQzI1NS41MjEsMzY1LjIxNiwyNTYuMzMxLDM2Ni43MzIsMjU3LjY3OSwzNjcuNjM0eiIgZmlsbD0iIzdlYzljMyIvPgoJPC9nPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />
 						</div>
 						<p class="about-item__text">Эксклюзивные сценарии</p> 
 					</div>
 					<div class="about-item column3">
 						<div class="about-item__img">
-							<img src="img/sprite/about_students.svg" alt="">
+							<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTYuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgd2lkdGg9IjY0cHgiIGhlaWdodD0iNjRweCIgdmlld0JveD0iMCAwIDQ0NC4wNTkgNDQ0LjA1OSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDQ0LjA1OSA0NDQuMDU5OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxnPgoJPGc+CgkJPGc+CgkJCTxwYXRoIGQ9Ik0zNTcuNzYsMzEyLjIzNGMtMy4yOC03Ljg0OC0xMS4xNzgtMTIuODczLTE4LjcxMy0xNS45NjNsLTUwLjkzOC0yMy40NTVsLTI0LjQ3My0yMC42MzlsLTM5LjMyMywzOS4xMTFoLTAuMDMgICAgIGwxNi45NzEsMTEzLjQ0NWMwLjA2MSwwLjM4OS0wLjA0LDAuNzg3LTAuMjcxLDEuMTA1bC0xNy43NDQsMjQuMjgzYy0wLjI4MiwwLjM5MS0wLjczMiwwLjYxNy0xLjIxMiwwLjYxNyAgICAgYy0wLjQ4LDAtMC45My0wLjIyOS0xLjIxMi0wLjYxN2wtMTcuNzQyLTI0LjI4M2MtMC4yMzQtMC4zMTgtMC4zMzItMC43MTktMC4yNzMtMS4xMDVsMTYuOTY5LTExMy40NDdoLTAuMDI2bC0zOS4zMjEtMzkuMTA5ICAgICBsLTI0LjQ3MywyMC42MzlsLTUwLjk0MSwyMy40NTVjLTcuNTM3LDMuMDktMTQuOTQzLDcuNzgzLTE4LjcxMSwxNS45NjNjMCwwLTU1LjM3MSwxMzEuODI0LTI1LjMzOCwxMzEuODI0aDMyMi4xNDUgICAgIEM0MTMuMTMyLDQ0NC4wNjEsMzU3Ljc2LDMxMi4yMzQsMzU3Ljc2LDMxMi4yMzR6IiBmaWxsPSIjN2VjOWMzIi8+CgkJCTxwYXRoIGQ9Ik0zNjEuMjk4LDEzMS40ODljMC43NjctMC4wODMsMS40NTctMC40NDksMS45MzItMS4wNDJjMC40ODEtMC41OTIsMC42OTgtMS4zNTUsMC42MTMtMi4xMTQgICAgIGMtMC41Ny00Ljg2OS0xLjE0My05LjcyOC0xLjcwOC0xNC41OTdsLTEuMTg3LTEwLjE4OWMtMC4xODEtMS41MjEtMS41NDItMi42MjctMy4wNzQtMi40OWwtMi4yMDMsMC4wMDNsMC4wNDItMzQuMjAyICAgICBsMS4xNTMtMC40MTlsMy44NDUtMS4zODhjMy4yNTYtMS4xNzgsNS40MjQtNC4yNjUsNS40MjQtNy43MjRjMC0zLjQ2LTIuMTY4LTYuNTQ4LTUuNDI0LTcuNzI3TDIyNC44MTksMC40OSAgICAgYy0xLjgwNy0wLjY1My0zLjc4My0wLjY1My01LjU4NiwwTDgzLjMzOSw0OS42Yy0zLjI1NCwxLjE3OS01LjQyMiw0LjI2Ny01LjQyMiw3LjcyN2MwLDMuNDU5LDIuMTY4LDYuNTQ2LDUuNDIyLDcuNzI0ICAgICBsNTAuMjM2LDE4LjE1NWMtMy41NDYsMTEuMTk1LTUuMTYsMjQuMDEzLTUuMDE1LDM4LjI4NGMwLjg4NCw4MS40MDIsNDguMTM4LDEyOS45NDQsOTEuODYyLDEyOS45NDQgICAgIGM0My4yMTMsMCw5MC45NzktNDguNTQyLDkxLjg1OS0xMjkuOTQ0YzAuMTQ2LTEzLjgzMi0xLjM3OS0yNi4yOTEtNC42OTctMzcuMjM4bDM2LjUyOC0xMy4ybDAuMDc3LDMwLjAyMWwtMi4yMDctMC4wMDEgICAgIGMtMS41MzMtMC4xMzQtMi44OTUsMC45NjgtMy4wNywyLjUwMWwtMi44NTcsMjQuNzg4Yy0wLjA4NiwwLjc1NSwwLjEzNywxLjUxLDAuNjE1LDIuMTA0YzAuNDc5LDAuNTkxLDEuMTc2LDAuOTcsMS45MzIsMS4wMzMgICAgICBNMjIwLjQyOCwyMzEuNjY2Yy0zOC4xNDgsMC02NC40NzEtNDQuNjg4LTY5Ljc4MS04OS4zNjFjLTQuOTEtNDEuMzE0LDU0LjgzOC00My4yMzcsNTguMzA4LTE3LjYzICAgICBjMS4wNjksNy44NzItNy45NywxNi4zMDUtNi45NDUsMTkuNTU2YzUuMDU2LDE2LjA0OSw4OC43NzItNTIuMzgzLDg4LjItMS45NDZDMjg5LjgwNywxNzcuODk2LDI1Ni43NzUsMjMxLjY2NiwyMjAuNDI4LDIzMS42NjZ6ICAgICAiIGZpbGw9IiM3ZWM5YzMiLz4KCQk8L2c+Cgk8L2c+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" />
 						</div>
 						<p class="about-item__text">Скидки студентам</p> 
 					</div>
 					<div class="about-item column3">
 						<div class="about-item__img">
-							<img src="img/sprite/about_transport.svg" alt="">
+							<img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTguMS4xLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDQ1LjQzNyA0NS40MzciIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ1LjQzNyA0NS40Mzc7IiB4bWw6c3BhY2U9InByZXNlcnZlIiB3aWR0aD0iNjRweCIgaGVpZ2h0PSI2NHB4Ij4KPGc+Cgk8cGF0aCBkPSJNNDEuNDAzLDExLjExYy0wLjM3MS0zLjYyNy0wLjk2Mi02LjQ1MS0xLjg5Ny03LjU2MWMtMy44NTUtNC41NjQtMzAuODU5LTQuODk4LTMzLjkyNSwwICAgYy0wLjc1LDEuMi0xLjI3Niw0LjAxNC0xLjYyOSw3LjU2N2MtMS4xMzksMC4xMzQtMi4wMjYsMS4wOTMtMi4wMjYsMi4yNjd2NC40NDNjMCwwLjk4OCwwLjYyNiwxLjgyMSwxLjUsMi4xNDYgICBjLTAuMjA3LDYuOTk4LTAuMDM5LDE0LjI5OSwwLjI3MSwxNy45M2MwLDIuODAzLDEuODgzLDIuMzM4LDEuODgzLDIuMzM4aDEuNzY1djMuMDI2YzAsMS4yLDEuMjM3LDIuMTcxLDIuNzYxLDIuMTcxICAgYzEuNTI2LDAsMi43NjMtMC45NzEsMi43NjMtMi4xNzFWNDAuMjRoMjAuNTM0djMuMDI2YzAsMS4yLDEuMjM2LDIuMTcxLDIuNzYyLDIuMTcxYzEuNTI0LDAsMi43NjEtMC45NzEsMi43NjEtMi4xNzFWNDAuMjRoMC41OCAgIGMwLDAsMi4yMTYsMC4zMDQsMi4zNTgtMS4wMTZjMC0zLjYyMSwwLjIyOC0xMS42NDYsMC4wNC0xOS4yMjFjMC45MjktMC4yOTEsMS42MDctMS4xNDcsMS42MDctMi4xNzd2LTQuNDQzICAgQzQzLjUxMiwxMi4xODEsNDIuNTgyLDExLjIwNiw0MS40MDMsMTEuMTF6IE0xMi4xNzYsNC4yaDIwLjczNXYzLjEzN0gxMi4xNzZWNC4yeiBNMTIuNDcyLDM2LjY2N2MtMS42MjgsMC0yLjk0Ny0xLjMyLTIuOTQ3LTIuOTQ4ICAgYzAtMS42MjcsMS4zMTktMi45NDYsMi45NDctMi45NDZzMi45NDgsMS4zMTksMi45NDgsMi45NDZDMTUuNDIsMzUuMzQ3LDE0LjEwMSwzNi42NjcsMTIuNDcyLDM2LjY2N3ogTTMyLjgsMzYuNjY3ICAgYy0xLjYyNywwLTIuOTQ5LTEuMzItMi45NDktMi45NDhjMC0xLjYyNywxLjMyMS0yLjk0NiwyLjk0OS0yLjk0NnMyLjk0NywxLjMxOSwyLjk0NywyLjk0NiAgIEMzNS43NDgsMzUuMzQ3LDM0LjQyOCwzNi42NjcsMzIuOCwzNi42Njd6IE0zNi41NDcsMjMuNzY3SDguNTRWOS4wNzdoMjguMDA3VjIzLjc2N3oiIGZpbGw9IiM3ZWM5YzMiLz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KCTxnPgoJPC9nPgoJPGc+Cgk8L2c+Cgk8Zz4KCTwvZz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8Zz4KPC9nPgo8L3N2Zz4K" />
 						</div>
 						<p class="about-item__text">Транспортная доступность</p> 
 					</div>
@@ -124,25 +129,40 @@
 						Что о нас говорят
 					</p>
 				</div>
-				<div class="row">
-					<div class="reviews-item column6">
+				<div class="row js-feedback">
+					<div class="column6">
+					<div class="reviews-item">
 						<p class="reviews-item__name">Карина</p>
 						<p class="reviews-item__date">06.04.2016 14:45</p>
 						<p class="reviews-item__text">Уровень реализации на высоте! Это не просто набор загадок - это реальное приключение с отличным дизайном и сюжетом! Рекомендую проходить в команде не менее 3х человек - работа найдется всем, уровень хитроумности и плотности задач превзошел наши ожидания. Весь вечер после прохождения прошел в обсуждении испытанного - это было ВАУ! Ребята молодцы!</p>
 					</div>
-					<div class="reviews-item column6">
+					</div>
+					<div class="column6">
+					<div class="reviews-item">
 						<p class="reviews-item__name">Алексей</p>
 						<p class="reviews-item__date">25.09.2016 23:15</p>
 						<p class="reviews-item__text">Стильный, атмосферный, непростой и захватывающий квест, который "вырывает" тебя из реального мира. На час мы выпали из повседневности! Спасибо за теплый прием, дружескую атмосферу, адекватного администратора и, разумеется, позитивные эмоции!</p>
+					</div>
+					</div>
+					<div class="column6">
+					<div class="reviews-item">
+						<p class="reviews-item__name">Михаил</p>
+						<p class="reviews-item__date">25.09.2016 23:15</p>
+						<p class="reviews-item__text">Стильный, атмосферный, непростой и захватывающий квест, который "вырывает" тебя из реального мира. На час мы выпали из повседневности! Спасибо за теплый прием, дружескую атмосферу, адекватного администратора и, разумеется, позитивные эмоции!</p>
+					</div>
 					</div>
 				</div>
 				<div class="reviews-form">
 					<div class="row">
 						<form action="">
-							<input type="text" placeholder="Сообщение" class="reviews-form__text column8 pull-left">
-							<input type="text" placeholder="Имя" required class="reviews-form__name column3 pull-right">
-							<input type="text" placeholder="Почта" required class="reviews-form__mail column3 pull-right">
-							<input type="submit" value="Записаться на квест" class="reviews-form__send pull-right">
+							<div class="column8">
+								<textarea class="reviews-form__text">  Сообщение </textarea>
+							</div>
+							<div class="reviews-form__data column4">
+								<input type="text" placeholder="Имя" required class="reviews-form__name">
+								<input type="text" placeholder="Почта" required class="reviews-form__mail">
+								<input type="submit" value="Записаться на квест" class="reviews-form__send">
+							</div>
 						</form>
 					</div>
 				</div>
@@ -159,19 +179,30 @@
 						<p class="contacts-item contacts-item--phone">+7 999 888 99 88</p>
 						<p class="contacts-item contacts-item--mail">quest@gmail.com</p>
 						<div class="socio">
+							<a href="http://vk.com" class="contacts_socio"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzQzNkVBQjsiIGQ9Ik00NDAuNjQ5LDI5NS4zNjFjMTYuOTg0LDE2LjU4MiwzNC45MDksMzIuMTgyLDUwLjE0Miw1MC40MzYgIGM2LjcyOSw4LjExMiwxMy4wOTksMTYuNDgyLDE3Ljk3MywyNS44OTZjNi45MDYsMTMuMzgyLDAuNjUxLDI4LjEwOC0xMS4zNDgsMjguOTA3bC03NC41OS0wLjAzNCAgYy0xOS4yMzgsMS41OTYtMzQuNTg1LTYuMTQ4LTQ3LjQ4OS0xOS4zMDJjLTEwLjMyNy0xMC41MTktMTkuODkxLTIxLjcxNC0yOS44MjEtMzIuNTg4Yy00LjA3MS00LjQ0NC04LjMzMi04LjYyNi0xMy40MjItMTEuOTMyICBjLTEwLjE4Mi02LjYwOS0xOS4wMjEtNC41ODYtMjQuODQsNi4wMzRjLTUuOTI2LDEwLjgwMi03LjI3MSwyMi43NjItNy44NTMsMzQuOGMtMC43OTksMTcuNTY0LTYuMTA4LDIyLjE4Mi0yMy43NTEsMjIuOTg2ICBjLTM3LjcwNSwxLjc3OC03My40ODktMy45MjYtMTA2LjczMi0yMi45NDdjLTI5LjMwOC0xNi43NjgtNTIuMDM0LTQwLjQ0MS03MS44MTYtNjcuMjQgIEM1OC41ODksMjU4LjE5NCwyOS4wOTQsMjAwLjg1MiwyLjU4NiwxNDEuOTA0Yy01Ljk2Ny0xMy4yODEtMS42MDMtMjAuNDEsMTMuMDUxLTIwLjY2M2MyNC4zMzMtMC40NzMsNDguNjYzLTAuNDM5LDczLjAyNS0wLjAzNCAgYzkuODksMC4xNDUsMTYuNDM3LDUuODE3LDIwLjI1NiwxNS4xNmMxMy4xNjUsMzIuMzcxLDI5LjI3NCw2My4xNjksNDkuNDk0LDkxLjcxNmM1LjM4NSw3LjYsMTAuODc2LDE1LjIwMSwxOC42OTQsMjAuNTUgIGM4LjY1LDUuOTIzLDE1LjIzNiwzLjk2LDE5LjMwNS01LjY3NmMyLjU4Mi02LjExLDMuNzEzLTEyLjY5MSw0LjI5NS0xOS4yMzRjMS45MjgtMjIuNTEzLDIuMTgyLTQ0Ljk4OC0xLjE5OS02Ny40MjIgIGMtMi4wNzYtMTQuMDAxLTkuOTYyLTIzLjA2NS0yMy45MzMtMjUuNzE0Yy03LjEyOS0xLjM1MS02LjA2OC00LjAwNC0yLjYxNi04LjA3M2M1Ljk5NS03LjAxOCwxMS42MzQtMTEuMzg3LDIyLjg3NS0xMS4zODdoODQuMjk4ICBjMTMuMjcxLDIuNjE5LDE2LjIxOCw4LjU4MSwxOC4wMzUsMjEuOTM0bDAuMDcyLDkzLjYzN2MtMC4xNDUsNS4xNjksMi41ODIsMjAuNTEsMTEuODkzLDIzLjkzMSAgYzcuNDUyLDIuNDM2LDEyLjM2NC0zLjUyNiwxNi44MzYtOC4yNTFjMjAuMTgzLTIxLjQyMSwzNC41ODgtNDYuNzM3LDQ3LjQ1Ny03Mi45NTFjNS43MTEtMTEuNTI3LDEwLjYyMi0yMy40OTcsMTUuMzgxLTM1LjQ1OCAgYzMuNTI2LTguODc1LDkuMDU5LTEzLjI0MiwxOS4wNTYtMTMuMDQ5bDgxLjEzMiwwLjA3MmMyLjQwNiwwLDQuODQsMC4wMzUsNy4xNywwLjQzNGMxMy42NzEsMi4zMywxNy40MTgsOC4yMTEsMTMuMTk1LDIxLjU2MSAgYy02LjY1MywyMC45NDUtMTkuNTk4LDM4LjQtMzIuMjU1LDU1LjkzNWMtMTMuNTMsMTguNzIxLTI4LjAwMSwzNi44MDItNDEuNDE4LDU1LjYzNCAgQzQyNC4zNTcsMjcxLjc1Niw0MjUuMzM2LDI4MC40MjQsNDQwLjY0OSwyOTUuMzYxTDQ0MC42NDksMjk1LjM2MXoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /></a>
+							<a href="http://fb.com" class="contacts_socio"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzM4NUM4RTsiIGQ9Ik0xMzQuOTQxLDI3Mi42OTFoNTYuMTIzdjIzMS4wNTFjMCw0LjU2MiwzLjY5Niw4LjI1OCw4LjI1OCw4LjI1OGg5NS4xNTkgIGM0LjU2MiwwLDguMjU4LTMuNjk2LDguMjU4LTguMjU4VjI3My43OGg2NC41MTljNC4xOTUsMCw3LjcyNS0zLjE0OCw4LjIwNC03LjMxNWw5Ljc5OS04NS4wNjFjMC4yNjktMi4zNC0wLjQ3Mi00LjY4NC0yLjAzOC02LjQ0ICBjLTEuNTY3LTEuNzU3LTMuODEtMi43NjMtNi4xNjQtMi43NjNoLTc0LjMxNlYxMTguODhjMC0xNi4wNzMsOC42NTQtMjQuMjI0LDI1LjcyNi0yNC4yMjRjMi40MzMsMCw0OC41OSwwLDQ4LjU5LDAgIGM0LjU2MiwwLDguMjU4LTMuNjk4LDguMjU4LTguMjU4VjguMzE5YzAtNC41NjItMy42OTYtOC4yNTgtOC4yNTgtOC4yNThoLTY2Ljk2NUMzMDkuNjIyLDAuMDM4LDMwOC41NzMsMCwzMDcuMDI3LDAgIGMtMTEuNjE5LDAtNTIuMDA2LDIuMjgxLTgzLjkwOSwzMS42M2MtMzUuMzQ4LDMyLjUyNC0zMC40MzQsNzEuNDY1LTI5LjI2LDc4LjIxN3Y2Mi4zNTJoLTU4LjkxOGMtNC41NjIsMC04LjI1OCwzLjY5Ni04LjI1OCw4LjI1OCAgdjgzLjk3NUMxMjYuNjgzLDI2OC45OTMsMTMwLjM3OSwyNzIuNjkxLDEzNC45NDEsMjcyLjY5MXoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==" /></a>
+							<a href="http://instagram.com" class="contacts_socio"><img src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6IzFEMzM2NjsiIGQ9Ik02NS43NDEsMC4wMjFINDQ2LjI5YzM2LjE1NCwwLDY1LjcxLDI5LjU2Niw2NS43MSw2NS43MlY0NDYuMjljMCwzNi4xNDQtMjkuNTU2LDY1LjY5LTY1LjcxLDY1LjY5ICBINjUuNzQxQzI5LjU4Nyw1MTEuOTgsMCw0ODIuNDMyLDAsNDQ2LjI5VjY1Ljc0MUMwLDI5LjU4NywyOS41ODcsMC4wMjEsNjUuNzQxLDAuMDIxeiBNMzcyLjk4NSw1Ni44ODIgIGMtMTIuNjk0LDAtMjMuMDQ5LDEwLjM5NS0yMy4wNDksMjMuMDgzdjU1LjE0OWMwLDEyLjY5MiwxMC4zNTQsMjMuMDY0LDIzLjA0OSwyMy4wNjRoNTcuODYxYzEyLjY3NCwwLDIzLjA1LTEwLjM3MSwyMy4wNS0yMy4wNjQgIFY3OS45NjRjMC0xMi42ODctMTAuMzc3LTIzLjA4My0yMy4wNS0yMy4wODNDNDMwLjg0Niw1Ni44ODIsMzcyLjk4NSw1Ni44ODIsMzcyLjk4NSw1Ni44ODJ6IE00NTQuMTE3LDIxNi41MjFoLTQ1LjA0OSAgYzQuMjcyLDEzLjk1Miw2LjU4OCwyOC42NjUsNi41ODgsNDMuOTYyYzAsODUuMTMyLTcxLjI4MSwxNTQuMTgtMTU5LjE3NCwxNTQuMThjLTg3Ljg3MSwwLTE1OS4xNTQtNjkuMDQ4LTE1OS4xNTQtMTU0LjE4ICBjMC0xNS4yOTcsMi4zMzgtMzAuMDEsNi41ODktNDMuOTYyaC00N3YyMTYuMjg5YzAsMTEuMjAxLDkuMTQ2LDIwLjMxMywyMC4zMzcsMjAuMzEzaDM1Ni41MzVjMTEuMjAxLDAsMjAuMzI4LTkuMTEyLDIwLjMyOC0yMC4zMTMgIFYyMTYuNTIxeiBNMjU2LjQ4MywxNTUuMjY5Yy01Ni43NjQsMC0xMDIuODEsNDQuNTkyLTEwMi44MSw5OS42NDljMCw1NS4wMDEsNDYuMDQ2LDk5LjYyNywxMDIuODEsOTkuNjI3ICBjNTYuNzk0LDAsMTAyLjg0Mi00NC42MjYsMTAyLjg0Mi05OS42MjdDMzU5LjMyNSwxOTkuODU5LDMxMy4yNzcsMTU1LjI2OSwyNTYuNDgzLDE1NS4yNjl6Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" /></a>
 						</div>
 						<a href="" class="action-link">Записаться на квест</a>
 				</div>
+				<div class="column6">
+					<div class="map">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15986.069632904962!2d30.263900749999998!3d59.94444204999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sru!2sru!4v1476558493630" width="100%" height="455px" frameborder="0" style="border:0" allowfullscreen></iframe>	
+					</div>
 				</div>
-				<div class="map column6">	
 				</div>
 			</div>
 		</div>
 	</main>
-	<footer>
-		<div class="container column12">
+	<footer class="footer">
+		<div class="container">
+		<div class="column12">
 			<p class="footer-text text-center">2015 Quest</p>
 		</div>
+		</div>
 	</footer>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -1,6 +1,10 @@
 // font-family: 'Open Sans', sans-serif;
-
-
+a, button, a:active, a:focus, *[class*='slick']{
+    outline: none !important;   
+}
+*:focus{
+    outline: none;
+}
 .column1 {  width: 8.33%;   }
 .column2 {  width: 16.66%; }
 .column3 {  width: 25%;      }
@@ -57,6 +61,7 @@ a {
 
 .logo img{
     max-width: 100%;
+    padding-top: 10px;
 }
 .navigation-row {
     background-color: #000;
@@ -78,13 +83,33 @@ a {
     margin-right: 0;
 }
 .main-nav__link--socio{
+    // margin-top: 15px;
+    height: 25px;
+    width: 25px;
+    display: inline-block;
 }
+.main-nav__link--socio img{
+    height: 100%;
+    width: 100%;
+}
+
 
 .promo{
     background-image: url(../img/sprite/bg_promo.jpg);
-    background-size: cover;
+    // background-size: cover;
     background-repeat: no-repeat;
-    
+    // height: 95vh;    
+    position: relative;
+}
+.promo:before{
+    content: "";
+    position: absolute;
+    background-image: url(../img/sprite/logo_touch.png);
+    width: 213px;
+    height: 307px;
+    background-repeat: no-repeat;
+    top: 100px;
+    left: 550px; //пробовала l0+r0, не сработало
 }
 .promo-title{
     padding: 440px 0 93px 0px;
@@ -102,6 +127,8 @@ a {
     background-image: url(../img/sprite/bg_reviews_top.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
 }
 .quests-title{
     text-transform: uppercase;
@@ -117,28 +144,31 @@ a {
     content: "";
     display: block;
     position: absolute;
-    background-image: url(../img/sprite/wheel_logo.svg);
+    background-image: url(../img/sprite/wheel.png);
+    top: -40px;
     width: 90px;
-    height: 90px;
-    text-align: center;
-    background-color: cover;
+    height: 123px;
     background-size: 100%;
-    vertical-align: top;
-    
+    vertical-align: top; 
+    left: 440px;
 }
 
 
 .quest-cart__big{
     margin: 10px auto;
     min-height: 280px;
+    border: 1px solid transparent;
 
+}
+.quest-cart__big:hover{
+    border: 1px solid #7ec9c3;
 }
 .quest-cart-title{
     font-weight: normal;
     font-size: 22px;
     line-height: 24px;
     text-transform: uppercase;
-    width: 25%;
+    width: 26%;
     padding: 0px 0 0 60px;
 }
 .quest-cart__big-text{
@@ -152,25 +182,34 @@ a {
     font-size: 14px;
     line-height: 18px;
 }
+.quest-cart__small{
+    border: 1px solid transparent;
+    min-height: 280px;
+    margin-bottom: 70px;
+    position: relative;
+}
+.quest-cart__small:hover{
+    border: 1px solid #7ec9c3;
+}
+
 .quest-cart__small-text{
     text-transform: uppercase;
     font-weight: normal;
     font-size: 22px;
     line-height: 24px;
     width: 130px;
+    position: absolute;
+    top: 180px;
+    left: 320px;
 }
 .quest-cart__small--open{
     color: #fdf;
 }
-.quest-cart__small{
-    min-height: 280px;
-    margin-bottom: 70px;
-}
 .quest-cart__small:nth-child(2n-1){
-    margin-right: 10px;
+    // margin-right: 10px;
 }
 .quest-cart__big--experiment{
-    background-image: url(../img/sprite/expirement_promo.png);
+    background-image: url(../img/sprite/bg_experiment.jpg);
     background-size: cover;
     background-repeat: no-repeat;    
 }
@@ -200,16 +239,21 @@ a {
 }
 .about-item{
     display: inline-block;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+    
 }
 .about-item__img{
     height: 85px;
     max-width: 100%;
+    margin: 0 auto; 
 }
 .about-item__text{
     text-transform: uppercase;
-    width: 130px;
-    padding: 55px 0 0 30px;   
+    max-width: 130px;   
     text-align: center;
+    padding-left: 35px;
 }
 .about-text{
     width: 85%;
@@ -230,6 +274,29 @@ a {
     background-repeat: no-repeat;
     background-size: cover;
     margin-top: -36px;
+    position: relative;
+    background-attachment: fixed;
+}
+.reviews .slick-prev, 
+.reviews .slick-next{
+    position: absolute;
+    border: none;
+    background-color: transparent;
+    z-index: 5;
+} 
+.reviews .slick-prev{
+    left: -55px;
+    top: 50%;
+} 
+.reviews .slick-next{
+    top: 49%;
+    right: -55px;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+    
 }
 .reviews-title{
     font-size: 36px;
@@ -239,6 +306,7 @@ a {
     padding-top: 20px
 }
 .reviews-item{
+    min-height: 250px;
     padding: 0;
     font-size: 16px;
     line-height: 20px;
@@ -264,7 +332,8 @@ a {
     padding-left: 30px;
     width: 85%;
 }
-.reviews-form{
+.reviews-form__data{
+    margin-top: 15px;
 
 }
 .reviews-form__text{
@@ -276,9 +345,13 @@ a {
     font-size: 14px;
     line-height: 36px;
     font-weight: 300;
-    overflow: none;
+    resize: none;
+    height: 170px;
+    width: 100%;
+    margin: 15px 0;
 }
 .reviews-form__name{
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px #396662 solid;
     color: #fff;
@@ -288,9 +361,14 @@ a {
     line-height: 36px;
     font-weight: 300;
     margin-bottom: 10px;
-
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    
 }
 .reviews-form__mail{
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px #396662 solid;
     color: #fff;
@@ -299,9 +377,14 @@ a {
     font-size: 14px;
     line-height: 36px;
     font-weight: 300;
-
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    
 }
 .reviews-form__send{
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px #396662 solid;
     color: #fff;
@@ -310,7 +393,7 @@ a {
     font-size: 14px;
     line-height: 36px;
     font-weight: 300;
-
+    margin-top: 7px;
 }
 
 .contacts{
@@ -318,7 +401,7 @@ a {
     padding-left: 10px;
 }
 .contacts-details{
-
+    
 }
 .contacts-title{
     font-size: 36px;
@@ -329,7 +412,7 @@ a {
 .contacts-item{
     color: #fff;
     font-size: 18px;
-    line-height: 20px;
+    line-height: 25px;
    padding-left: 40px;
 }
 .contacts-item--city{
@@ -350,17 +433,21 @@ a {
 .contacts-item--city:before{
     content: "";
     display: block;
-    width: 25px;
-    height: 20px;
-    background-image: url(../img/sprite/contacts_pin.svg);
-    
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/sprite/pin.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;    
 }
 .contacts-item--metro:before{
     content: "";
     display: block;
-    width: 25px;
-    height: 20px;
-    background-image: url(../img/sprite/contacts_metro.svg);
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/sprite/metro.png);
+    background-repeat: no-repeat;
+    left: 0;    
     background-size: 100%;
     position: absolute;
     
@@ -368,9 +455,11 @@ a {
 .contacts-item--time:before{
     content: "";
     display: block;
-    width: 25px;
-    height: 20px;
-    background-image: url(../img/sprite/contacts_time.svg);
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/sprite/schedule.png);
+    background-repeat: no-repeat;
+    left: 0;    
     background-size: 100%;
     position: absolute;
     
@@ -378,9 +467,11 @@ a {
 .contacts-item--phone:before{
     content: "";
     display: block;
-    width: 25px;
-    height: 20px;
-    background-image: url(../img/sprite/contacts_phone.svg);
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/sprite/phone.png);
+    background-repeat: no-repeat;
+    left: 0;    
     background-size: 100%;
     position: absolute;
     
@@ -388,26 +479,34 @@ a {
 .contacts-item--mail:before{
     content: "";
     display: block;
-    width: 25px;
-    height: 20px;
-    background-image: url(../img/sprite/contacts_mail.svg);
+    width: 30px;
+    height: 30px;
+    background-image: url(../img/sprite/mail.png);
+    background-repeat: no-repeat;
+    left: 0;    
     background-size: 100%;
     position: absolute;
     
 }
 .action-link{
-    padding: 20px 48px;
+    display: inline-block;
+    padding: 10px 58px;
+    margin: 10px 0 40px 0;
     background-color: #3f7772;
     color: #fff;
-    margin: 30px 0;
+}
+.contacts_socio img{
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    padding: 10px;
 }
 
 
-
-footer{
+.footer{
     background-image: url(../img/sprite/bg_reviews_top.png);
-    background-size: 100%;
-    position: absolute;
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 75px;
 }
