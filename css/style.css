@@ -54,6 +54,7 @@ body{
     font-family: 'Open Sans', 'Arial', sans-serif;
     font-weight: 300;
     color: #7ec9c3;
+    margin: 0;
 }
 a {
     text-decoration: none;
@@ -100,6 +101,7 @@ a {
     background-repeat: no-repeat;
     // height: 95vh;    
     position: relative;
+    z-index: 1;
 }
 .promo:before{
     content: "";
@@ -140,7 +142,7 @@ a {
     position: relative;
 
 }
-.quests-title:before{
+.quests-title:before, .quest-info:before{
     content: "";
     display: block;
     position: absolute;
@@ -181,6 +183,45 @@ a {
     font-weight: normal;
     font-size: 14px;
     line-height: 18px;
+}
+.quest-cart__big--people{
+    position: relative;
+}
+.quest-cart__big--price{
+    position: relative;
+}
+.quest-cart__big--time{
+    position: relative;
+}
+.quest-cart__big--people:before, .quest-info__numbers--people:before{
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url(../img/sprite/people.png);
+    width: 26px;
+    height: 30px;
+    left: 20px;
+    bottom: -5px; 
+}
+.quest-cart__big--price:before, .quest-info__numbers--price:before{
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url(../img/sprite/price.png);
+    width: 23px;
+    height: 30px;
+    left: 20px;
+    bottom: -5px;
+}
+.quest-cart__big--time:before, .quest-info__numbers--time:before{
+    content: "";
+    display: block;
+    position: absolute;
+    background-image: url(../img/sprite/time.png);
+    width: 22px;
+    height: 30px;
+    left: 20px;
+    bottom: -5px;   
 }
 .quest-cart__small{
     border: 1px solid transparent;
@@ -509,4 +550,66 @@ a {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 75px;
+}
+
+
+
+.banner{
+    background-image: url(../img/bg_banner.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+}
+.banner-title{
+    padding: 50px 85px;
+    line-height: 40px;
+    font-size: 36px;
+    color: #fff;
+    font-weight: 300;
+    text-transform: uppercase;
+    width: 40%;
+    position: relative;
+}
+.banner-title:before{
+    position: absolute;
+    content: "";
+    display: block;
+    height: 80px;
+    width: 71px;
+    background-image: url(../img/sprite/logo_experiment.png);
+    left: 0;
+    bottom: 55px;
+}
+.quest-info{
+    background-image: url(../img/sprite/bg_reviews_top.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.quest-info__text--description{
+    font-size: 18px;
+    line-height: 26px;
+    color: #fff;
+}
+.quest-info__numbers--people{
+    position: relative;
+    padding-left: 40px;
+}
+.quest-info__numbers--price{
+    position: relative;
+    padding-left: 40px;
+}
+.quest-info__numbers--time{
+    position: relative;
+    padding-left: 40px;
+}
+.quest-info__numbers--people:before{
+    left: 2px;
+}
+.quest-info__numbers--price:before{
+    left: 2px;
+}
+.quest-info__numbers--time:before{
+    left: 2px;
 }
